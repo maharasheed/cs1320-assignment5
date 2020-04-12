@@ -2,6 +2,10 @@
 
 > A native application built with NativeScript-Vue
 
+## NOTE
+Please refer to @442 on Piazza and the HTA Zhengyi before grading. My app is working and was tested by Zhengyi, but there was a problem with the key. Details can be fount in the Piazza post and Zhengyi.
+Thank you for you efforts!
+
 ## Usage
 
 ``` bash
