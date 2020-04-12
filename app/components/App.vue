@@ -22,7 +22,7 @@
             <GridLayout ~mainContent columns="*" rows="*" :class="currentComponent != 'Login' && currentComponent != 'Register' ? '' : 'mainBack'">
                 <component
                 v-for="component in componentsArray"
-                v-show="component === currentComponent"
+                v-if="component === currentComponent"
                 :is="component"
                 :my-data="myData"
                 @clicked='addChild'

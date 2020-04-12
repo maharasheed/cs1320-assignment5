@@ -32,8 +32,9 @@ export default{
                 // this is your location data, may need to parse
                 this.mylat = loc.latitude;
                 this.mylon = loc.longitude;
-                let result = await axios.get("https://maps.googleapis.com/maps/api/place/nearbysearch/json?location="+loc.latitude+","+loc.longitude+"&radius=3000&type=restaurant&key=AIzaSyBMnjXVWebqKX6uNN5_Bourv5qZRq-VdXk");
+                let result = await axios.get("https://maps.googleapis.com/maps/api/place/nearbysearch/json?location="+loc.latitude+","+loc.longitude+"&radius=500&type=restaurant&key=AIzaSyBMnjXVWebqKX6uNN5_Bourv5qZRq-VdXk");
                 this.nearRestaurant = (result.data.results).slice(0,9);
+                alert(JSON.stringify(result.data));
             }
         },
             function(e) {
@@ -61,11 +62,11 @@ export default{
         },
         async getSearchData(){
             if(this.searchtxt == null || this.searchtxt.trim() == ''){
-                let result = await axios.get("https://maps.googleapis.com/maps/api/place/nearbysearch/json?location="+this.mylat+","+this.mylon+"&radius=3000&type=restaurant&key=AIzaSyBMnjXVWebqKX6uNN5_Bourv5qZRq-VdXk");
+                let result = await axios.get("https://maps.googleapis.com/maps/api/place/nearbysearch/json?location="+this.mylat+","+this.mylon+"&radius=500&type=restaurant&key=AIzaSyBMnjXVWebqKX6uNN5_Bourv5qZRq-VdXk");
                 this.nearRestaurant = (result.data.results).slice(0,9);
             }
             else{
-                let result = await axios.get("https://maps.googleapis.com/maps/api/place/nearbysearch/json?location="+this.mylat+","+this.mylon+"&radius=3000&type=restaurant&keyword="+this.searchtxt.trim()+"&key=AIzaSyBMnjXVWebqKX6uNN5_Bourv5qZRq-VdXk");
+                let result = await axios.get("https://maps.googleapis.com/maps/api/place/nearbysearch/json?location="+this.mylat+","+this.mylon+"&radius=1500&type=restaurant&keyword="+this.searchtxt.trim()+"&key=AIzaSyBMnjXVWebqKX6uNN5_Bourv5qZRq-VdXk");
                 this.nearRestaurant = (result.data.results).slice(0,9);
             }
         },
